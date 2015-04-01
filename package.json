@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/toonborgers/FiNodeje",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "mongoose": "3.8",
+    "mongoose-user": "0.0.1"
   }
 }
