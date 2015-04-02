@@ -1,13 +1,11 @@
 var express = require('express'),
     app = express(),
-    openingHours = require('./routes/openingHours'),
-    categories = require('./routes/categories'),
-    products = require('./routes/products');
+    config = require('./config');
 
-app.use('/api/v1/openingHours', openingHours);
-app.use('/api/v1/categories', categories);
-app.use('/api/v1/products', products);
+app.use(config.baseUrl + '/openingHours', require('./routes/openingHours'));
+app.use(config.baseUrl + '/categories', require('./routes/categories'));
+app.use(config.baseUrl + '/products', require('./routes/products'));
 
-app.listen(9000, function () {
+app.listen(config.port, function () {
     console.log('App started');
 });
