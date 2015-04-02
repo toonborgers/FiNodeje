@@ -1,11 +1,13 @@
 var express = require('express'),
-    app = express();
+    app = express(),
+    openingHours = require('./routes/openingHours'),
+    categories = require('./routes/categories'),
+    products = require('./routes/products');
 
-require('./routes/routes')(app);
+app.use('/api/v1/openingHours', openingHours);
+app.use('/api/v1/categories', categories);
+app.use('/api/v1/products', products);
 
-var server = app.listen(3000, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
+app.listen(9000, function () {
+    console.log('App started');
 });
