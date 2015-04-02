@@ -1,4 +1,4 @@
 
 [submodule "mongo"]
 	path = mongo
-	url = https://github.com/markdunphy/node-mongo-vagrant
+	url = git@github.com:toonborgers/node-mongo-vagrant.git
